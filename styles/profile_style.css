@@ -1,0 +1,398 @@
+:root {
+    --main-color: rgb(229, 9, 20);
+    --background-color: #000;
+    --background-color-rgb: rgba(0, 0, 0, 0.4);
+    --secondary-background: #454a52;
+    --secondary-background-rgb: rgba(255, 255, 255, 0.7);
+    --text-color: rgb(255, 255, 255);
+}
+
+/* General Styles */
+* {
+    font-family: "Segoe UI", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.6;
+    background-size: cover;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; 
+}
+
+.bg {
+    background: url(../assets/images/background.png) no-repeat center center/cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -4567;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width:100%;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.card-start {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.container-pair {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+
+    overflow: hidden;
+}
+
+.card-container {
+    width: 300px; /* عرض ثابت للكارد */
+    height: 400px; /* ارتفاع تلقائي */
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 2px groove #454a52;
+    box-shadow: 0 0 45px #454a52;
+}
+
+.contanier-form {
+    width: 650px; /* عرض ثابت للفورم */
+    height:400Px; /* ارتفاع تلقائي */
+    margin-bottom: 25px;
+    border-radius: 12px;
+    border: 2px groove #454a52;
+    box-shadow: 0 0 45px #454a52;
+    background-color: rgba(255, 255, 255, 0.7);
+    
+
+}
+
+
+.card-img-top {
+    height: 75%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-body {
+    height: 25%;
+    background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: #000;
+}
+
+
+.edit-profile {
+    color: rgb(255, 255, 255);
+    font-weight: 800;
+}
+
+.form {
+    width: 100%; /* اجعل الفورم يأخذ عرض الشاشة */
+    max-width: 600px; /* لا يتجاوز 600px في الشاشات الكبيرة */
+    height: auto;
+    margin-bottom: 5vh;
+}
+
+/* منع أي عنصر داخل الفورم من الخروج عن الحد */
+.form input, .form textarea, .form select {
+    max-width: 100%;
+}
+
+.form-input {
+    background-color: var(--background-color-rgb);
+    border-color: var(--background-color-rgb);
+    color: var(--text-color) !important;
+}
+
+.form-input:focus {
+    box-shadow: 0 0 1rem rgba(239, 237, 237, 0.75);
+    background-color: var(--background-color-rgb);
+    border-color: var(--text-color);
+}
+
+input::placeholder {
+    color: #544f4f !important;
+}
+
+.form-text {
+    color: #000;
+    font-weight: 400;
+}
+.form-container {
+    z-index: 10; 
+    display: block; /* تأكد من أن العنصر مرئي */
+    visibility: visible;
+}
+
+.edit-btn {
+    padding: 2px 6px 2px 6px;
+    font-weight: 800;
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: var(--text-color);
+}
+
+.edit-btn:hover {
+    background-color: rgba(229, 9, 20, 0.9);
+    transform: scale(0.98);
+    box-shadow: inset 0 4px 8px rgba(173, 18, 18, 0.2);
+}
+
+.botton-update {
+    margin-top: 1vh;
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: var(--text-color);
+    transition: background-color 0.9s, color 0.3s;
+    font-weight: 800;
+}
+
+.botton-update:hover {
+    background-color: rgba(229, 9, 20, 0.9);
+    transform: scale(0.98);
+    box-shadow: inset 0 4px 8px rgba(173, 18, 18, 0.2);
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    display: none;
+}
+
+.password-container input:not([disabled]) + .toggle-password {
+    display: inline;
+}
+
+.password-container .toggle-password:hover {
+    color: #000;
+}
+
+.footer-section{
+    width: 100%;
+    height: auto;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .container-pair {
+        flex-direction: column; /* جعل العناصر تظهر بشكل عمودي */
+        height: auto; /* ارتفاع تلقائي */
+        margin-right: 0; /* إزالة margin-right */
+    }
+
+    .card-container {
+        width: 80%; /* جعل الكارد يأخذ 80% من العرض */
+        max-width: 100%; /* إزالة الحد الأقصى للعرض */
+        height: auto; /* ارتفاع تلقائي */
+        margin-bottom: 20px; /* مسافة أسفل الكارد */
+    }
+
+    .contanier-form {
+        width: 80%; /* جعل الفورم يأخذ 80% من العرض */
+        height: auto; /* ارتفاع تلقائي */
+        margin-bottom: 20px; /* مسافة أسفل الفورم */
+    }
+
+    .form {
+        width: 90%;
+        height: auto;
+        margin-bottom: 5vh;
+    }
+
+    .all {
+        margin-left: 120px;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .container-pair {
+        flex-direction: column; /* جعل العناصر تظهر بشكل عمودي */
+        gap: 10px; /* تقليل المسافة بين العناصر */
+    }
+
+    .card-container {
+        width: 80%; /* جعل الكارد يأخذ 80% من العرض */
+    }
+
+    .contanier-form {
+        width: 80%; /* جعل الفورم يأخذ 80% من العرض */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+  
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+
+    h6 {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .container-pair {
+        padding: 10px; /* تقليل padding */
+    }
+ 
+     
+    
+
+    .contanier-form {
+        width: 90%; /* جعل الفورم يأخذ 90% من العرض */
+    }
+
+    .form {
+        width: 100%;
+        height: auto;
+        margin-bottom: 3vh;
+    }
+
+    .edit-btn, .botton-update {
+        padding: 5px 10px;
+        font-size: 0.9rem;
+    }
+
+    .all {
+        margin-left: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-size: contain;
+        background-position: top center;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    h5 {
+        font-size: 0.9rem;
+    }
+
+    h6 {
+        font-size: 0.8rem;
+    }
+
+    .container {
+        padding: 0 5px;
+    }
+
+    .container-pair {
+        padding: 5px; /* تقليل padding أكثر */
+    }
+
+    .card-container {
+        width: 100%; /* جعل الكارد يأخذ 100% من العرض */
+    }
+
+    .contanier-form {
+        width: 100%; /* جعل الفورم يأخذ 100% من العرض */
+    }
+
+    .form {
+        width: 100%;
+        height: auto;
+        margin-bottom: 2vh;
+    }
+
+    .edit-btn, .botton-update {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+
+    .all {
+        margin-left: 120px;
+    }
+}
+@media (max-width: 800px) {
+    .form {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    .contanier-form  {
+        width: 90%;
+    }
+}
+
+
+
